@@ -3,17 +3,16 @@ import java.time.LocalDate;
 import java.util.Random;
 
 public class FlightBooking {
-    
-    private int totalPassengers;
-    private double totalTicketPrice;
-    private int childPassengers;
-    private int adultPassengers;
-    private double  departingTicketPrice; 
     private String flightID;
     private String  passengerFullName;
     private String flightCompany;
     private LocalDate departingDate;
     private LocalDate returnDate;
+    private int totalPassengers;
+    private double totalTicketPrice;
+    private int childPassengers;
+    private int adultPassengers;
+    private double  departingTicketPrice;
     private double  returnTicketPrice;
     BookingClass bookingClass;
     TripDestination tripDestination;
@@ -28,16 +27,16 @@ public class FlightBooking {
         this.returnDate = returnDate;
         this.childPassengers =childPassengers;
         this.adultPassengers =adultPassengers;
-
-    }
-    enum TripSource{
-        NANJING,BEIJING,SHANGHAI,OULU,HELSINKI,PARIS
     }
     enum TripType{
         ONE_WAY,RETURN
     }
-    
-    
+    enum BookingClass{
+        FIRST,BUSINESS,ECONOMY
+    }
+    enum TripSource{
+        NANJING,BEIJING,SHANGHAI,OULU,HELSINKI,PARIS
+    }
     enum TripDestination{
         NANJING,BEIJING,SHANGHAI,OULU,HELSINKI,PARIS
     }
@@ -72,16 +71,15 @@ public class FlightBooking {
     public int getTripDate() {
             return TripDate;
         }
-    
-    public String getPassengerFullName()
-    {
-
-        return passengerFullName;
-    }
     public String getTicketNumber()
     {
 
         return ticketNumber;
+    }
+    public String getPassengerFullName()
+    {
+
+        return passengerFullName;
     }
     public void setTripSource(String tripSource){
             switch(tripSource){
